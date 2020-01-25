@@ -21,6 +21,7 @@ var exam = require('./routes/exam');
 var contacts = require('./routes/contacts');
 var student = require('./routes/student');
 var subject = require('./routes/subject');
+var fapi = require('./routes/firstapi');
 var app = express();
 app.use(cors());
 app.use(note);
@@ -36,6 +37,7 @@ app.use(exam);
 app.use(contacts);
 app.use(student);
 app.use(subject);
+
 /*
 {
     "id_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJyciIsImVtYWlsIjoicnJAbHdjLnV6IiwiaWF0IjoxNTA1ODQwNTIzLCJleHAiOjE1MDU4NTg1MjN9.SGFTjDrtunAouWDS79j2cwcm23Q_ahFnkxSurekIEXM"
@@ -57,6 +59,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use(register); 
+app.use(fapi);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
